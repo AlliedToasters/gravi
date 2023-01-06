@@ -43,7 +43,7 @@ def build_throughline_graph(p, g=None):
     for i in range(last_node):
         other = i+1
         if other == last_node:
-            print('reached last node...')
+            # print('reached last node...')
             other = 0
         g.add_edge(i, other)
     return g
