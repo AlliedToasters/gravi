@@ -150,6 +150,7 @@ def main():
     trainer.test()
 
 
-if __name__ == "__main__":
-    # model = GNN()
-    main()
+# if __name__ == "__main__":
+    # model = GNN(hidden_channels=64, out_channels=349)
+
+    # main()

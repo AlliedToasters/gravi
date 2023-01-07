@@ -44,6 +44,8 @@ def scale_3vec(p, scl):
 def graph_to_edge_index(g):
     edges = list(g.edges)
     edge_index = torch.tensor(edges, dtype=torch.long).t().contiguous()
+    edge_index = to_undirected(edge_index)
+
     return edge_index
 
 def preprocess_data():
@@ -54,7 +56,7 @@ def preprocess_data():
             output_scl = pickle.load(f)
         output_train_graphs = torch.load('data/train_graphs.pt')
         output_valid_graphs = torch.load('data/valid_graphs.pt')
-        input_scl, output_scl, train_graphs, valid_graphs
+        # input_scl, output_scl, train_graphs, valid_graphs
     except FileNotFoundError:
         tr, va = train_test_split()
         tr_p, tr_f, va_p, va_f, all_p, all_f = [], [], [], [], [], []

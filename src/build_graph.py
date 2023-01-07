@@ -24,7 +24,7 @@ def build_nn_graph(p, k=6, g=None, use_gpu=True):
         for item in row:
             edge = (i, item)
             edge = (min(edge), max(edge))
-            if edge[0] != edge[1]:
+            if edge[0] != edge[1] and edge[0] >= 0:
                 g.add_edge(edge[0], edge[1])
     return g
 
